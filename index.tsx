@@ -18,7 +18,14 @@ const app = new Elysia().use(html())
 
 .post('/clicked', () => <div class='text-blue-500'>im from the server</div>)
 
+.get('/todos', () => <TodoList todos={db} />)
+
 .listen(3000)
+
+
+
+
+// frontend
 
 const BaseHtml = ({ children }: elements.Children) => `
 <DOCTYPE html>
