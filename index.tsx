@@ -1,11 +1,19 @@
 import { Elysia } from 'elysia'
 import { html } from '@elysiajs/html'
+import * as elements from 'typed-html'
 
 const app = new Elysia().use(html())
 
-.get('/', ({ html }) => html(baseHtml)).listen(3000)
+.get('/', ({ html }) => 
+    html(
+        <BaseHtml>
+            <h1>hello world</h1>
+        </BaseHtml>
+    )
+)
+.listen(3000)
 
-const baseHtml = `
+const BaseHtml = ({ children }: elements.Children) => `
 <DOCTYPE html>
 <html lang="en">
 
@@ -14,5 +22,5 @@ const baseHtml = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elysia</title>
 </head>
-<body>HTML doc</body>
+${children}
 `
