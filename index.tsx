@@ -39,3 +39,5 @@ type Todo = {
     content: string;
     completed: boolean;
 }
+
+const db: Todo[] = []
