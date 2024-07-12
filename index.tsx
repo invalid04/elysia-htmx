@@ -16,7 +16,7 @@ const app = new Elysia().use(html())
     )
 )
 
-.post('/clicked', () => <div>im from the server</div>)
+.post('/clicked', () => <div class='text-blue-500'>im from the server</div>)
 
 .listen(3000)
 
@@ -33,3 +33,9 @@ const BaseHtml = ({ children }: elements.Children) => `
 </head>
 ${children}
 `
+
+type Todo = {
+    id: number;
+    content: string;
+    completed: boolean;
+}
