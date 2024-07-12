@@ -7,11 +7,11 @@ const app = new Elysia().use(html())
 .get('/', ({ html }) => 
     html(
         <BaseHtml>
-            <body>
-                <button hx-post='/clicked' hx-swap='outerHTML'>
-                    click me
-                </button>
-            </body>
+            <body 
+                class='flex w-full h-screen justify-center items-center'
+                hx-get='/todos'
+                hx-trigger='load'
+            />
         </BaseHtml>
     )
 )
