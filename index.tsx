@@ -40,4 +40,7 @@ type Todo = {
     completed: boolean;
 }
 
-const db: Todo[] = []
+const db: Todo[] = [
+    {id: 1, content: 'learn elysia', completed: false},
+    {id: 2, content: 'learn java', completed: false},
+]
