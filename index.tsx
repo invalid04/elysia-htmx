@@ -44,3 +44,13 @@ const db: Todo[] = [
     {id: 1, content: 'learn elysia', completed: false},
     {id: 2, content: 'learn java', completed: false},
 ]
+
+function TodoItem({ content, completed, id}: Todo) {
+    return (
+        <div class='flex flex-row space-x-3'>
+            <p>{content}</p>
+            <input type='checkbox' checked={completed} />
+            <button class='text-red-500'>X</button>
+        </div>
+    )
+}
