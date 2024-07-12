@@ -54,3 +54,13 @@ function TodoItem({ content, completed, id}: Todo) {
         </div>
     )
 }
+
+function TodoList({ todos }: { todos: Todo[] }) {
+    return (
+        <div>
+            {todos.map((todo) => (
+                <TodoItem {...todo} />
+            ))}
+        </div>
+    )
+}
