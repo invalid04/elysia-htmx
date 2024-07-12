@@ -7,10 +7,17 @@ const app = new Elysia().use(html())
 .get('/', ({ html }) => 
     html(
         <BaseHtml>
-            <h1>hello world</h1>
+            <body>
+                <button hx-post='/clicked' hx-swap='outerHTML'>
+                    click me
+                </button>
+            </body>
         </BaseHtml>
     )
 )
+
+.post('/clicked', () => <div>im from the server</div>)
+
 .listen(3000)
 
 const BaseHtml = ({ children }: elements.Children) => `
